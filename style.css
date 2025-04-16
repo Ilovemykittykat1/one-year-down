@@ -1,0 +1,82 @@
+/* Reset and basic setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Page layout */
+header {
+  background-color: #079fd6;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #0f87e9;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Bird styles (applies to both birds) */
+#flyingBird,
+#secondBird {
+  position: fixed;
+  width: 400px;
+  z-index: 1000;
+  filter: drop-shadow(0 0 10px red);
+  transition: left 1.5s ease, top 1.5s ease;
+}
+
+/* Flapping animation for both birds */
+@keyframes flapWings {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.85) rotate(-1deg);
+  }
+}
+
+.flapping {
+  animation: flapWings 0.3s ease-in-out infinite;
+}
+
+/* Chat bubble */
+#birdChat {
+  position: fixed;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 18px;
+  color: #d10000;
+  z-index: 1000;
+  max-width: 300px;
+  animation: floatChat 2s infinite ease-in-out;
+}
+
+@keyframes floatChat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+body {
+  font-family: Arial, sans-serif;
+  background: url("images/background.png") no-repeat center center fixed;
+  background-size: cover;
+}
